@@ -3,6 +3,11 @@
 .home {
 
   .intro {
+    img {
+      border-radius: 21px;
+      width: calc(100vw - 16px);
+      margin: 0 10px;
+    }
 
     h2 {
       padding: 15px;
@@ -24,6 +29,17 @@
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+    }
+    @media @phone {
+      img{
+        width: calc(100vw - 16px);
+        margin: 20px 8px;
+      }
+      .tecnologia,
+      .ondas{
+        display: none;
+      }
+
     }
   }
 
@@ -58,8 +74,18 @@
       }
 
       .btn {
+        .boton(@btn-bg-color,@porcelain);
+        cursor: pointer;
       }
-    }
+      @media @phone{
+        .btn{
+          width: auto;
+          font-size: 16px;
+          text-align: center;
+          padding: 16px;
+        }
+      }
+      }
 
     .actual-img {
       width: 46%;
@@ -71,5 +97,16 @@
         border-radius: 10px;
       }
     }
+    @media @phone{
+      padding: 50px 8px;
+      flex-direction: column-reverse;
+      .actual-text{
+        width: 100%;
+      }
+      .actual-img{
+          width: 100%;
+          margin-left: 0;
+      }
+  }
   }
 }

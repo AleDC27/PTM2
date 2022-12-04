@@ -1,1 +1,15 @@
-// Mixins acá
+.radius{
+    border-radius: 8px;
+}
+.boton(@bg-color,@text-color){
+    background-color: @bg-color;
+    width: fit-content;
+    padding: 10px;
+    color: @text-color;
+    font-size: 2rem;
+    .radius();
+    transition:background-color 0.5s;
+    &:hover{
+        background-color:@river-bend;
+    }
+  }
