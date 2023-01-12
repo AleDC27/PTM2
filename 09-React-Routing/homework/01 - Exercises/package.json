@@ -17,10 +17,10 @@
     "json-server": "^0.17.0",
     "nock": "^13.2.9",
     "node-fetch": "^2.6.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.5"
   },
   "scripts": {
@@ -50,7 +50,8 @@
     ]
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "standard": "^17.0.0",
+    "jest-environment-jsdom":"29.3.1"
   },
   "standard": {
     "env": [
@@ -68,7 +69,8 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
-    }
+    },
+    "testEnvironment":"jsdom"
   },
   "babel": {
     "presets": [
