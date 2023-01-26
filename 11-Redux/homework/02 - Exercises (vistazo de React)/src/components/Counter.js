@@ -4,12 +4,14 @@ import { increment, decrement } from "../actions";
 
 class Counter extends Component {
   // Extra Credit
-  incrementIfOdd = () => {
+  incrementIfOdd = (valor) => {
     //Implementar una función de incremento que sólo aumenta si el valor del contador es impar
+    if(valor%2===0) return valor+1
   };
   // Extra Credit
   incrementAsync = () => {
     //  Implementar una función de incremento que aumenta después de esperar un segundo
+    if(valor%2!==0) return valor+1
   };
 
   render() {
@@ -19,17 +21,14 @@ class Counter extends Component {
       <p>
         Clickeado: {this.props.count} veces
         <button
-          onClick={() => {
-            /* Completar */
-          }}
-        >
+          onClick={ this.props.increment}>
+            {/* Completar   */}
+        
           + {/* Incremeta */}
         </button>
         <button
-          onClick={() => {
-            /* Completar */
-          }}
-        >
+          onClick={this.props.decrement}>   
+          { /* Completar */ }
           - {/* Decrementa */}
         </button>
         {/* Si quieres hacer los extra credit puede descomentar las líneas de abajo */}
