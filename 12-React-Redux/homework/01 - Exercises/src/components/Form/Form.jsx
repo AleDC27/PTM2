@@ -2,13 +2,20 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Caja from '../../assets/caja.png';
 import './form.css';
+import {addProduct} from '../../redux/actions/actions.js'
 
-function Form() {
+console.log(Date.now())
+
+function Form({addProduct}) {
    const [product, setProduct] = useState({ name: '', price: '', id: '' });
 
    function handleInputChange(e) {
       e.preventDefault();
       setProduct({ ...product, [e.target.name]: e.target.value });
+   }
+
+   const handleSubmit=()=>{
+      addProduct({...product,id:Date.now()})
    }
 
    return (
@@ -30,12 +37,18 @@ function Form() {
                value={product.price}
             />
          </div>
-         <button className='formBtn'>¡ADD!</button>
+         <button className='formBtn' onClick={handleSubmit}>¡ADD!</button>
          <img src={Caja} alt='' className='logo' />
       </div>
    );
 }
 
-export function mapDispatchToProps() {}
+export function mapDispatchToProps(dispactch) {
+   return {
+      addProduct:function (product) {
+         dispactch(addProduct(product))
+      }
+   }
+}
 
 export default connect(null, mapDispatchToProps)(Form);

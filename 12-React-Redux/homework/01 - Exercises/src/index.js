@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Home';
+import Home from './Home.js';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import store from './redux/store/index';
+
 
 ReactDOM.render(
    <Provider store={store}>
