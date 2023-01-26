@@ -24,7 +24,7 @@
     "styled-components": "^5.3.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start":"react-scripts --openssl-legacy-provider start",
     "server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "test": "jest --detectOpenHandles --verbose",
@@ -50,7 +50,8 @@
     ]
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "standard": "^17.0.0",
+    "jest-environment-jsdom":"29.3.1"
   },
   "standard": {
     "env": [
@@ -68,7 +69,8 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
-    }
+    },
+    "testEnvironment":"jsdom"
   },
   "babel": {
     "presets": [
