@@ -1,15 +1,16 @@
-const redux = require('redux');
+const redux = require('redux');//importamos redux
 
-const createStore = redux.createStore;
+const createStore = redux.createStore;//traemos la store de redux
 
-const ADD_TODO = 'ADD_TODO'
+const ADD_TODO = 'ADD_TODO'//action type
 const REMOVE_TODO = 'REMOVE_TODO';
 
-
+//estado inicial
 const initialState = {
   todos: []
 }
 
+//reducer
 const rootReducer = (state = initialState, action) => {
   switch(action.type) {
     case ADD_TODO:
@@ -25,10 +26,10 @@ const rootReducer = (state = initialState, action) => {
   }
 }
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer);//creamos la store
 
 store.subscribe(() => {
-  console.log('Subscription: ', store.getState());
+  console.log('Subscription: ', store.getState());//
 });
 
 function addTodo(text) {
